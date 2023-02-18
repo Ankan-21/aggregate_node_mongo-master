@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title><%=title%></title>
+    <%- include('./layout/head')%>
+<body>
+
+<div class="container">
+  <h2>Add Product</h2>
+  <form action="/update-product" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="p_id" value="<%=singledata._id%>">
+    <div class="form-group">
+      <label for="email">Product Name:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter product" name="pname" value="<%=singledata.product_name%>">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Price:</label>
+      <input type="text" class="form-control" id="pwd" placeholder="Enter Price" name="price" value="<%=singledata.price%>">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Product size:</label>
+        <input type="text" class="form-control" id="pwd" placeholder="Enter size" name="size" value="<%=singledata.size%>">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Details:</label>
+        <input type="text" class="form-control" id="pwd" placeholder="Enter details" name="details" value="<%=singledata.details%>">
+      </div>
+      <div class=" form-group">
+        <label for="gender">Gender: </label>
+        <input type="radio" name="gender" value="male" <%= singledata.gender=='male'? "checked" : '' %>> Male
+        <input type="radio" name="gender" value="female"  <%= singledata.gender=='female'? "checked" : '' %>> Female
+        <input type="radio" name="gender" value="others"  <%= singledata.gender=='others'? "checked" : '' %>> Others
+      </div>
+      <div class="form-group">
+        <label for="pwd">image:</label>
+        <input type="file" class="form-control" id="pwd" name="image" >
+      </div>
+    <button type="submit" class="btn btn-info">Add</button>
+  </form>
+</div>
+</body>
+</html>

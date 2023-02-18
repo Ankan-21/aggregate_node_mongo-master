@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title><%=title%></title>
+    <%- include('./layout/head')%>
+<body>
+
+<div class="container">
+   
+  <h2>Add Product</h2>
+  <% if (error.length>0) {%> 
+    <div class="alert alert-danger">
+      <%= error %>
+    </div>  
+    <%}%>  
+  <form action="/addpost-product" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="email">Product Name:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter product" name="pname">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Price:</label>
+      <input type="text" class="form-control" id="pwd" placeholder="Enter Price" name="price">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Product size:</label>
+        <input type="text" class="form-control" id="pwd" placeholder="Enter size" name="size">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Details:</label>
+        <input type="text" class="form-control" id="pwd" placeholder="Enter details" name="details">
+      </div>
+      <div class=" form-group">
+        <label for="gender">Gender: </label>
+        <input type="radio" name="gender" value="male" > Male
+        <input type="radio" name="gender" value="female" > Female
+        <input type="radio" name="gender" value="others" > Others
+      </div>
+      <div class="form-group">
+        <label for="pwd">Image:</label>
+        <input type="file" class="form-control" name="image">
+      </div>
+    
+    <button type="submit" class="btn btn-info">Add</button>
+  </form>
+</div>
+
+</body>
+</html>
